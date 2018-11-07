@@ -1,7 +1,7 @@
 {"dashboard": {
   "id": null,
-  "title": "Docker Host",
-  "description": "Docker host metrics",
+  "title": "Host DOSGP1",
+  "description": "Docker host metrics DOSGP1",
   "tags": [
     "system"
   ],
@@ -236,7 +236,7 @@
           },
           "targets": [
             {
-              "expr": "machine_cpu_cores{job=\"nodeexporter\"}",
+              "expr": "machine_cpu_cores{job=\"cadvisor\"}",
               "intervalFactor": 2,
               "metric": "machine_cpu_cores",
               "refId": "A",

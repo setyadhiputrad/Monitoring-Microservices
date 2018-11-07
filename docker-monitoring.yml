@@ -17,7 +17,7 @@
 version: "3"
 
 networks:
-  monitlog:
+  monit_net:
     external:
       name: ${NETWORK_DOCKER}
 
@@ -32,8 +32,12 @@ services:
     links:
     external_links:
     networks:
-      - monitlog
+      - monit_net
     ports:
       - 9090:9090
-    
+    healthcheck:
+      test: curl -f -s -o /dev/null -w "%{http_code}\n" http://localhost/ || exit1
+      interval: ${HEALTH_INTERVAL}
+      timeout: ${HEALTH_TIMEOUT}
+      retries: ${HEALTH_RETRIES}
 

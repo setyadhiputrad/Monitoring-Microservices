@@ -403,7 +403,7 @@
           },
           "targets": [
             {
-              "expr": "(node_filesystem_size_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\"} - node_filesystem_avail_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\"}) / node_filesystem_size_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\"}  * 100",
+              "expr": "(node_filesystem_size_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\",mountpoint=\"/rootfs\"} - node_filesystem_free_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\",mountpoint=\"/rootfs\"}) / node_filesystem_size_bytes{fstype=\"ext4\",job=\"nodedinkesbatang\",mountpoint=\"/rootfs\"}  * 100",
               "interval": "30s",
               "intervalFactor": 1,
               "legendFormat": "",
